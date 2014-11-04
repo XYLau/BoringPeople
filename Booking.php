@@ -7,7 +7,7 @@
 </td> </tr>
 <?php
 putenv('ORACLE_HOME=/oraclient');
-$dbh = ocilogon('a0114573', 'crse1410', sid3);
+$dbh = ocilogon('a0115194', 'crse1410', sid3);
 ?>
 <tr> <td style="background-color:#eeeeee;">
 <form action="BookingDetails.php" method="post">
