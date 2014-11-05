@@ -70,7 +70,8 @@ $sql = "SELECT A1.country, A2.country, F1.dateflight, F1.timeflight, F2.dateflig
 FROM Airport A1, Airport A2, FlightInfo F1, FlightInfo F2, FlightClass FC 
 WHERE A1.country = '".$_GET['Departure']."' and A2.country = '".$_GET['To']."' and F1.infotype = 'D'
 and F1.airportcode = A1.airportcode and F1.dateflight = '".$_GET['Date']."' and F2.infotype = 'A'
-and F2.airportcode = A2.airportcode and FC.classtype = '".$_GET['Class']."' and F1.flightnum = FC.flightnum";
+and F2.airportcode = A2.airportcode and FC.classtype = '".$_GET['Class']."' and F1.flightnum = FC.flightnum
+ORDER by FC.price ASC;
 echo "<b>SQL: </b>".$sql."<br><br>";
 $stid = oci_parse($dbh, $sql);
 oci_execute($stid, OCI_DEFAULT);
